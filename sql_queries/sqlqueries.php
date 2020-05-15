@@ -18,12 +18,12 @@
         $con = mysqli_connect(HOST_DB, USUARIO_DB, USUARIO_PASS, DATABASE);
         // Verificar conexión
         if (mysqli_connect_errno()) {
-            echo "Error en la conexión: " . mysqli_connect_error();
+            echo "<div class=\"result_query error_text\"> Error en la conexión: " . mysqli_connect_error() . "</div>";
         } else {
-            if (mysqli_query($con, $sql)) {
-                echo "exito!";
+            if (mysqli_query($con, $sql) ) {
+                echo "<div class=\"result_query success_text\">¡EXITO!"  . "</div>";
             } else {
-                echo "Error en la inserción: " . mysqli_connect_error();
+                echo "<div class=\"result_query error_text\">Error en la inserción: " . mysqli_error($con)  . "</div>";
             }
         }
         mysqli_close($con);

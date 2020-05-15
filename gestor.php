@@ -39,19 +39,21 @@
         </form>
     </div>
 
+    
     <?php
-        include_once dirname(__FILE__) . '/config/config.php';
-        include_once dirname(__FILE__) . '/sql_queries/sqlqueries.php';
-        if(isset($_POST["cedula"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["edad"])){
-            $persona = new Persona;
-            $persona->nombre = $_POST["nombre"];
-            $persona->apellido = $_POST["apellido"];
-            $persona->cedula = $_POST["cedula"];
-            $persona->correo_electronico = $_POST["email"];
-            $persona->edad = $_POST["edad"];
-            insert_into_Personas($persona);
-        }    
+    include_once dirname(__FILE__) . '/config/config.php';
+    include_once dirname(__FILE__) . '/sql_queries/sqlqueries.php';
+    if (isset($_POST["cedula"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["edad"])) {
+        $persona = new Persona;
+        $persona->nombre = $_POST["nombre"];
+        $persona->apellido = $_POST["apellido"];
+        $persona->cedula = $_POST["cedula"];
+        $persona->correo_electronico = $_POST["email"];
+        $persona->edad = $_POST["edad"];
+        insert_into_Personas($persona);
+    }
     ?>
+
 
 </body>
 

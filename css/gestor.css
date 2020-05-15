@@ -38,3 +38,18 @@ div {
     width: 50%;
     margin: auto;
 }
+
+div.result_query {
+    margin: auto;
+    padding: 2%;
+    border: dashed orange 2px;
+    text-align: center;
+}
+
+div.error_text{
+    color: red;
+}
+
+div.success_text {
+    color: green;
+}
