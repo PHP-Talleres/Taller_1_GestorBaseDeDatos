@@ -11,7 +11,8 @@
 <body>
     <h1>Gestor para la tabla personas</h1>
     <h2>Crear y actualizar personas</h2>
-    <div>
+    <br>
+    <div class="form">
         <form action="gestor.php" method="post">
             <p>
                 <label>Cedula</label>
@@ -37,22 +38,41 @@
                 <input class='button' type='submit' value='Enviar'>
             </p>
         </form>
+        <?php
+        include_once dirname(__FILE__) . '/config/config.php';
+        include_once dirname(__FILE__) . '/sql_queries/sqlqueries.php';
+        if (isset($_POST["cedula"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["edad"])) {
+            $persona = new Persona;
+            $persona->nombre = $_POST["nombre"];
+            $persona->apellido = $_POST["apellido"];
+            $persona->cedula = $_POST["cedula"];
+            $persona->correo_electronico = $_POST["email"];
+            $persona->edad = $_POST["edad"];
+            insert_into_Personas($persona);
+        }
+        ?>
     </div>
-
-    
-    <?php
-    include_once dirname(__FILE__) . '/config/config.php';
-    include_once dirname(__FILE__) . '/sql_queries/sqlqueries.php';
-    if (isset($_POST["cedula"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["edad"])) {
-        $persona = new Persona;
-        $persona->nombre = $_POST["nombre"];
-        $persona->apellido = $_POST["apellido"];
-        $persona->cedula = $_POST["cedula"];
-        $persona->correo_electronico = $_POST["email"];
-        $persona->edad = $_POST["edad"];
-        insert_into_Personas($persona);
-    }
-    ?>
+    <br><br>
+    <h2>Eliminar personas</h2>
+    <br>
+    <div class="form">
+        <form action="gestor.php" method="get">
+            <p>
+                <label>Cedula</label>
+                <input id='cedula' name='cedula' required type='number'>
+            </p>
+            <p>
+                <input class='button' type='submit' value='Eliminar'>
+            </p>
+        </form>
+        <?php
+        include_once dirname(__FILE__) . '/config/config.php';
+        include_once dirname(__FILE__) . '/sql_queries/sqlqueries.php';
+        if (isset($_GET["cedula"])) {
+            delete_into_Personas($_GET["cedula"]);
+        }
+        ?>
+    </div>
 
 
 </body>

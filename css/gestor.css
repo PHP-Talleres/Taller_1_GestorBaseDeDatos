@@ -53,3 +53,8 @@ div.error_text{
 div.success_text {
     color: green;
 }
+
+div.form {
+    padding: 1%;
+    border: dashed #766b69 2px;
+}
