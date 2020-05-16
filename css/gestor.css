@@ -66,3 +66,7 @@ div.form {
     padding: 1%;
     border: dashed #766b69 2px;
 }
+
+div.footer{
+    padding: 20%;
+}
