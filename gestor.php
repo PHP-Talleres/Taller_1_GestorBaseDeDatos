@@ -9,6 +9,10 @@
 </head>
 
 <body>
+    <div>
+        <a href="index.php">Regresar</a>
+    </div>
+
     <h1>Gestor para la tabla personas</h1>
 
     <h2>Listado de personas</h2>
