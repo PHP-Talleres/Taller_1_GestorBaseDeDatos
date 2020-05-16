@@ -54,6 +54,9 @@
             date_default_timezone_set('America/Bogota');
             echo SpanishDate((new DateTime())->getTimestamp());
             echo date('h:i:s A') . "</br>";
+            echo "<br>";
+            crear_imagen();
+            echo "<img src=images/imagen.png?" . date("U") . ">";
         ?>
     </div>
 </body>
