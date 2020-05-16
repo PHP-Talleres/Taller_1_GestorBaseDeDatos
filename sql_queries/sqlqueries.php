@@ -71,3 +71,29 @@ function delete_into_Personas($cedula)
     }
     mysqli_close($con);
 }
+
+function list_Personas($parameter, $type){
+    $sql = 'SELECT * FROM Personas';
+    if($parameter == 'cedula'){
+        $sql .= ' ORDER BY Cedula';
+    }
+    if ($parameter == 'nombre') {
+        $sql .= ' ORDER BY Nombre';
+    }
+    if($type == 'ascending'){
+        $sql .= ' ASC';
+    }
+    if ($type == 'descending') {
+        $sql .= ' DESC';
+    }
+    // Crear conexión
+    $con = mysqli_connect(HOST_DB, USUARIO_DB, USUARIO_PASS, DATABASE);
+    // Verificar conexión
+    if (mysqli_connect_errno()) {
+        return null;
+    }
+    else{
+        $resultado = mysqli_query($con, $sql);
+        return $resultado;
+    }
+}

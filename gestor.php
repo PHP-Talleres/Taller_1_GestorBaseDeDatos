@@ -16,10 +16,10 @@
     <div>
         <table>
             <tr>
-                <td>Ascendente por Cedula</td>
-                <td>Descendente por Cedula</td>
-                <td>Ascendente por Nombre</td>
-                <td>Descendente por Nombre</td>
+                <td><a href="list.php?parameter=cedula&type=ascending">Ascendente por Cedula</a></td>
+                <td><a href="list.php?parameter=cedula&type=descending">Descendente por Cedula</a></td>
+                <td><a href="list.php?parameter=nombre&type=ascending">Ascendente por Nombre</a></td>
+                <td><a href="list.php?parameter=nombre&type=descending">Descendente por Nombre</a></td>
             </tr>
         </table>
     </div>
