@@ -10,6 +10,20 @@
 
 <body>
     <h1>Gestor para la tabla personas</h1>
+
+    <h2>Listado de personas</h2>
+
+    <div>
+        <table>
+            <tr>
+                <td>Ascendente por Cedula</td>
+                <td>Descendente por Cedula</td>
+                <td>Ascendente por Nombre</td>
+                <td>Descendente por Nombre</td>
+            </tr>
+        </table>
+    </div>
+
     <h2>Crear y actualizar personas</h2>
     <br>
     <div class="form">
